@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    sesion[:user_id] = nil
+    session[:user_id] = nil
     redirect_to root_url, notice: t('session.flash.destroy.success')
   end
 

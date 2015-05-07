@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   validate :require_password_confirmation
   has_many :notes
 
+  def display_name
+    name.presence || username
+  end
+  
   private
 
   def require_password_confirmation
